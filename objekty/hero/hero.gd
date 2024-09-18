@@ -27,7 +27,6 @@ func _input(event: InputEvent) -> void:
 			var dir = arrow.global_position.direction_to(get_global_mouse_position())
 			var pow_fact = 100 if gravity_act else 10
 			apply_central_force(dir * arrow.get_val() * pow_fact)
-
 			
 func _process(delta: float) -> void:
 	if clicked:
