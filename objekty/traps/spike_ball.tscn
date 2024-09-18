@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bilu618tcigml"]
+
+[ext_resource type="Script" path="res://objekty/traps/spike_ball.gd" id="1_775tm"]
+[ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="1_r27sd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w0wnl"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ds4mw"]
+radius = 38.6394
+
+[node name="SpikeBall" type="RigidBody2D" groups=["gravity"]]
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_w0wnl")
+script = ExtResource("1_775tm")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 3)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("1_r27sd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ds4mw")

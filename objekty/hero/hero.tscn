@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://boroua2ywk2fw"]
+
+[ext_resource type="Shader" path="res://objekty/hero/border.gdshader" id="1_4hbui"]
+[ext_resource type="Script" path="res://objekty/hero/hero.gd" id="1_kasnn"]
+[ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="1_nudlq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6ymqe"]
+rough = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n5ijc"]
+shader = ExtResource("1_4hbui")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jae14"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gtw04"]
+radius = 49.163
+
+[node name="Hero" type="RigidBody2D" groups=["gravity"]]
+input_pickable = true
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_6ymqe")
+contact_monitor = true
+max_contacts_reported = 3
+linear_damp_mode = 1
+angular_damp = -1.0
+script = ExtResource("1_kasnn")
+
+[node name="border" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.741176, 0.968627, 0, 0.301961)
+material = SubResource("ShaderMaterial_n5ijc")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_nudlq")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jae14")
+scale = Vector2(0.726562, 0.726562)
+texture = ExtResource("1_nudlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gtw04")
