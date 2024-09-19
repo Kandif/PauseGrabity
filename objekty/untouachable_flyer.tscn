@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://gv38521n5nyk"]
+
+[ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="1_ycdwd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u8sx5"]
+radius = 68.1542
+
+[node name="Untouachable flyer" type="RigidBody2D"]
+modulate = Color(1, 0.584314, 1, 1)
+mass = 0.75
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_u8sx5")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-2, 4)
+texture = ExtResource("1_ycdwd")

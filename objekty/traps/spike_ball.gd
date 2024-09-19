@@ -1,9 +1,10 @@
 extends RigidBody2D
+class_name GravityObject
 
 var clicked = false
 var gravity_act = false
 
-@onready var arrow = $"../Arrow"
+@onready var arrow = Arrow
 
 func on_change_gravity(is_active):
 	gravity_act = is_active

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsidlhci8k27m" path="res://grafiki/arrow/filled.png" id="2_lih8v"]
 
 [node name="Arrow" type="Node2D"]
+visible = false
 script = ExtResource("1_y0h8j")
 metadata/_edit_vertical_guides_ = [-196.0]
 

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtsxrk85c0xqb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w7wjl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxdnt"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(1, 1, 1, 0.529412)
+
+[sub_resource type="SphereMesh" id="SphereMesh_4nolb"]
+lightmap_size_hint = Vector2i(17, 9)
+material = SubResource("StandardMaterial3D_sxdnt")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsxdp"]
+radius = 79.0569
+
+[node name="Bombelek" type="RigidBody2D"]
+collision_mask = 8
+input_pickable = true
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_w7wjl")
+gravity_scale = -0.2
+contact_monitor = true
+max_contacts_reported = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(0.999999, 1.00001)
+scale = Vector2(76.0862, 74)
+mesh = SubResource("SphereMesh_4nolb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bsxdp")
