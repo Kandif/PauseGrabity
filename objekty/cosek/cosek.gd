@@ -27,6 +27,10 @@ func update_cosek_effect(pos:Vector2):
 func disable_effect():
 	is_pushing = false
 	
+func restart():
+	$circle_timer.visible = false
+	is_gravity_paused = false
+	is_pushing = false
 
 func _physics_process(delta: float) -> void:
 	angle += delta * 360

@@ -21,7 +21,7 @@ func is_border(is_border):
 	$Icon.material.set_shader_parameter("thickness", value)
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton:
+	if gravity_act and event is InputEventMouseButton:
 		var evbt:InputEventMouseButton = event
 		if evbt.is_pressed() and evbt.button_index == MOUSE_BUTTON_LEFT:
 			arrow.visible = true
