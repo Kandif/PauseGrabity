@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://do74iej53vp6f"]
 
-[ext_resource type="Script" path="res://objekty/traps/spike_ball.gd" id="1_0b7an"]
+[ext_resource type="Script" path="res://objekty/traps/gravityobject.gd" id="1_0b7an"]
 [ext_resource type="Script" path="res://objekty/sth_strange.gd" id="1_qdfiv"]
 [ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="1_wd308"]
 
@@ -24,7 +24,7 @@ node_b = NodePath("../cos")
 length = 200.0
 damping = 16.0
 
-[node name="cos" type="RigidBody2D" parent="." groups=["gravity"]]
+[node name="cos" type="RigidBody2D" parent="." groups=["enemy", "gravity"]]
 position = Vector2(-3, 208)
 input_pickable = true
 script = ExtResource("1_0b7an")

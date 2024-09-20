@@ -6,6 +6,7 @@
 
 [node name="Arrow" type="Node2D"]
 visible = false
+z_index = 3
 script = ExtResource("1_y0h8j")
 metadata/_edit_vertical_guides_ = [-196.0]
 

@@ -12,13 +12,22 @@ offsets = PackedFloat32Array(0, 0.933333)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0117647)
 
 [node name="Cosek" type="Area2D"]
+z_index = 5
 input_pickable = false
 script = ExtResource("1_a18oa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o72n8")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.0588235, 0.760784)
+position = Vector2(1, 0)
+scale = Vector2(0.328125, 0.328125)
+texture = ExtResource("2_ds8fu")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Icon"]
+position = Vector2(-3.04762, 0)
+scale = Vector2(3.04762, 3.04762)
 amount = 40
 lifetime = 0.5
 explosiveness = 0.15
@@ -30,12 +39,6 @@ gravity = Vector2(0, 50)
 initial_velocity_min = 70.71
 initial_velocity_max = 151.52
 color_ramp = SubResource("Gradient_v2vhu")
-
-[node name="Icon" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 0.0588235, 0.760784)
-position = Vector2(1, 0)
-scale = Vector2(0.328125, 0.328125)
-texture = ExtResource("2_ds8fu")
 
 [node name="pause_gravity_timer" type="Timer" parent="."]
 wait_time = 5.0

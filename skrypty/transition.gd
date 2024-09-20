@@ -5,10 +5,16 @@ signal changed_scene
 var is_playing = false
 var changed = false
 
-var scene_path:String
+var scene_path:Object
 
-func change_scene(xscene_path:String) -> void:
+func change_scene(xscene_path:Object) -> void:
 	scene_path = xscene_path
+	$AnimationPlayer.play("transition")
+	changed = false
+	is_playing = true
+	
+func restart() -> void:
+	scene_path = null
 	$AnimationPlayer.play("transition")
 	changed = false
 	is_playing = true
@@ -22,4 +28,7 @@ func _process(delta: float) -> void:
 			changing()
 
 func changing():
-	get_tree().change_scene_to_file(scene_path)
+	if scene_path == null:
+		get_tree().reload_current_scene()
+	else:	
+		get_tree().change_scene_to_packed(scene_path)
