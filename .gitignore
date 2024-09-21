@@ -3,5 +3,5 @@
 /android/
 
 # Godot-specific ignores
-*.import/
-
+.import/
+*.import
