@@ -7,13 +7,11 @@
 radius = 93.0484
 
 [node name="Gravitier" type="Area2D" groups=["gravity"]]
-monitoring = false
 monitorable = false
 gravity_space_override = 3
-gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
-gravity = 500.0
+gravity = 2000.0
 script = ExtResource("1_hnj1y")
 
 [node name="Icon" type="Sprite2D" parent="."]

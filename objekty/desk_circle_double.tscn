@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://desu5nkenpt1d"]
+
+[ext_resource type="PackedScene" uid="uid://dmqp6qi5xrott" path="res://jsut_kolce.tscn" id="1_arv31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jr8w7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qd1q"]
+size = Vector2(1058, 36)
+
+[node name="Desk-circle" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_jr8w7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+node_a = NodePath("../StaticBody2D")
+node_b = NodePath("../RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-249, 5)
+input_pickable = true
+mass = 0.5
+contact_monitor = true
+
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+offset_left = -270.0
+offset_top = -22.0
+offset_right = 780.0
+offset_bottom = 18.0
+mouse_filter = 1
+color = Color(0.366595, 0.366595, 0.366595, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="RigidBody2D"]
+offset_left = 268.0
+offset_top = -527.0
+offset_right = 1318.0
+offset_bottom = -487.0
+rotation = 1.5708
+mouse_filter = 1
+color = Color(0.366595, 0.366595, 0.366595, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(250, -3)
+shape = SubResource("RectangleShape2D_1qd1q")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(250, -3)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_1qd1q")
+
+[node name="jsut kolce" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(-202, -20)
+
+[node name="jsut kolce2" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(-52, -20)
+
+[node name="jsut kolce3" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(99, -18)
+
+[node name="jsut kolce7" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(390, 29)
+scale = Vector2(-1, -1)
+
+[node name="jsut kolce8" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(540, 29)
+scale = Vector2(-1, -1)
+
+[node name="jsut kolce9" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(691, 31)
+scale = Vector2(-1, -1)
+
+[node name="jsut kolce4" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(273, -450)
+rotation = 1.5708
+
+[node name="jsut kolce5" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(280, -293)
+rotation = 1.5708
+
+[node name="jsut kolce6" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(274, -150)
+rotation = 1.5708
+
+[node name="jsut kolce10" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(211, 159)
+rotation = 1.5708
+scale = Vector2(-1, -1)
+
+[node name="jsut kolce11" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(213, 303)
+rotation = 1.5708
+scale = Vector2(-1, -1)
+
+[node name="jsut kolce12" parent="RigidBody2D" instance=ExtResource("1_arv31")]
+position = Vector2(212, 459)
+rotation = 1.5708
+scale = Vector2(-1, -1)

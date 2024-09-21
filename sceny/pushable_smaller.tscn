@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://mf2dwdtsa7gs"]
+
+[ext_resource type="Script" path="res://objekty/traps/gravityobject.gd" id="1_e7sdo"]
+[ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="2_opvv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l46qu"]
+size = Vector2(104, 114)
+
+[node name="Pushable" type="RigidBody2D" groups=["enemy", "gravity"]]
+input_pickable = true
+mass = 0.5
+script = ExtResource("1_e7sdo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, 19)
+shape = SubResource("RectangleShape2D_l46qu")
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(10, 19)
+scale = Vector2(0.859375, 0.9375)
+texture = ExtResource("2_opvv1")

@@ -11,9 +11,9 @@ func on_change_gravity(is_active):
 	gravity_scale = 0 if is_active else 1
 
 func _ready() -> void:
-	mouse_entered.connect(is_border.bind(true))
-	mouse_exited.connect(is_border.bind(false))
-	input_event.connect(_on_input_event)
+	$Area2D.mouse_entered.connect(is_border.bind(true))
+	$Area2D.mouse_exited.connect(is_border.bind(false))
+	$Area2D.input_event.connect(_on_input_event)
 	
 func is_border(is_border):
 	var value = 7 if is_border else 0

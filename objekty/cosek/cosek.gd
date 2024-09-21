@@ -31,6 +31,9 @@ func restart():
 	$circle_timer.visible = false
 	is_gravity_paused = false
 	is_pushing = false
+	timer.stop()
+	var simple_tween = get_tree().create_tween()
+	simple_tween.tween_property(effect_rect.material,"shader_parameter/radius",0,0.5)
 
 func _physics_process(delta: float) -> void:
 	angle += delta * 360

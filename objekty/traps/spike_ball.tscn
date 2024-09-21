@@ -9,10 +9,10 @@ bounce = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3vr23"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ds4mw"]
-radius = 38.6394
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12l5t"]
+size = Vector2(85, 94)
 
-[node name="SpikeBall" type="RigidBody2D" groups=["gravity"]]
+[node name="SpikeBall" type="RigidBody2D" groups=["enemy", "gravity"]]
 input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_w0wnl")
 linear_damp_mode = 1
@@ -26,4 +26,5 @@ scale = Vector2(0.59375, 0.59375)
 texture = ExtResource("1_r27sd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ds4mw")
+position = Vector2(-2.5, 7)
+shape = SubResource("RectangleShape2D_12l5t")

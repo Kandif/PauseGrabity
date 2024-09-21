@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="1_wd308"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3g8s3"]
-radius = 32.5576
+radius = 86.1452
 
 [node name="Sth-strange" type="Node2D"]
 script = ExtResource("1_qdfiv")
@@ -15,17 +15,18 @@ script = ExtResource("1_qdfiv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(2, 1, 0, 209)
+points = PackedVector2Array(2, 1, -2, 303)
+default_color = Color(0, 0, 0, 1)
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
 position = Vector2(2, 2)
 node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../cos")
-length = 200.0
+length = 300.0
 damping = 16.0
 
 [node name="cos" type="RigidBody2D" parent="." groups=["enemy", "gravity"]]
-position = Vector2(-3, 208)
+position = Vector2(0, 303)
 input_pickable = true
 script = ExtResource("1_0b7an")
 metadata/_edit_group_ = true
@@ -35,6 +36,6 @@ position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_3g8s3")
 
 [node name="Icon" type="Sprite2D" parent="cos"]
-position = Vector2(3, -4)
-scale = Vector2(0.585938, 0.585938)
+position = Vector2(5, -3)
+scale = Vector2(1.16602, 1.16602)
 texture = ExtResource("1_wd308")

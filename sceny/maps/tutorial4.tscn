@@ -74,15 +74,15 @@ position = Vector2(1674, 627)
 [node name="UI" parent="." instance=ExtResource("8_olge8")]
 
 [node name="Untouachable flyer" parent="." instance=ExtResource("9_0qhv1")]
-position = Vector2(795, 561)
+position = Vector2(799, 563)
 
 [node name="Untouachable flyer2" parent="." instance=ExtResource("9_0qhv1")]
 position = Vector2(1323, 546)
 
 [node name="pushable_simple" parent="." instance=ExtResource("10_wxi4h")]
-position = Vector2(786, 881)
+position = Vector2(775, 871)
 mass = 0.5
 
 [node name="pushable_simple2" parent="." instance=ExtResource("10_wxi4h")]
-position = Vector2(1318, 902)
+position = Vector2(1361, 880)
 mass = 0.5
