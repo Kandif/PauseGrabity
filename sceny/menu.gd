@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func menu(button_name:String) -> void:
 	match(button_name):
 		"start":
-			Transition.change_scene("res://test_map.tscn")
+			Maps.next_map()
 		"options":
 			pass
 		"about":

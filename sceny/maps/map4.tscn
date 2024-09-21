@@ -30,6 +30,7 @@ shader_parameter/radius = 0.0
 shader_parameter/aberration = 0.0
 shader_parameter/width = 0.1
 shader_parameter/feather = 1.0
+shader_parameter/centerr = null
 
 [sub_resource type="Gradient" id="Gradient_bpg8e"]
 colors = PackedColorArray(1, 1, 1, 0.870588, 1, 1, 1, 0)

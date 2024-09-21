@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbdowmli04w2p"]
+[gd_scene load_steps=4 format=3 uid="uid://dbdowmli04w2p"]
+
+[ext_resource type="PackedScene" uid="uid://dmqp6qi5xrott" path="res://jsut_kolce.tscn" id="1_lhhsr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jr8w7"]
 
@@ -17,19 +19,56 @@ node_a = NodePath("../StaticBody2D")
 node_b = NodePath("../RigidBody2D")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(-249, 5)
+position = Vector2(3, 1)
+collision_layer = 2
+collision_mask = 2
 input_pickable = true
 mass = 0.5
 contact_monitor = true
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
-offset_left = -243.0
-offset_top = -22.0
-offset_right = 807.0
-offset_bottom = 18.0
+offset_left = -530.0
+offset_top = -19.0
+offset_right = 520.0
+offset_bottom = 21.0
 mouse_filter = 1
 color = Color(0.366595, 0.366595, 0.366595, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(283, -3)
+position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_1qd1q")
+
+[node name="jsut kolce" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(-468, -12)
+collision_layer = 4
+collision_mask = 4
+
+[node name="jsut kolce2" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(-311, -18)
+collision_layer = 4
+collision_mask = 4
+
+[node name="jsut kolce3" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(-167, -14)
+collision_layer = 4
+collision_mask = 4
+
+[node name="jsut kolce4" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(-14, -15)
+collision_layer = 4
+collision_mask = 4
+
+[node name="jsut kolce5" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(122, -17)
+collision_layer = 4
+collision_mask = 4
+
+[node name="jsut kolce6" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(272, -19)
+collision_layer = 4
+collision_mask = 4
+
+[node name="jsut kolce7" parent="RigidBody2D" instance=ExtResource("1_lhhsr")]
+position = Vector2(437, -22)
+collision_layer = 4
+collision_mask = 4
