@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciubaddv18sw5"
-path="res://.godot/imported/p_6.png-262deb9b463096d751629f2bdc4efd2f.ctex"
+uid="uid://bng6ew4vjue34"
+path="res://.godot/imported/spritesheet_slimak.png-0bca75b2cad89b316ebc2c9089ec5848.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grafiki/particle/p_6.png"
-dest_files=["res://.godot/imported/p_6.png-262deb9b463096d751629f2bdc4efd2f.ctex"]
+source_file="res://grafiki/slimor/spritesheet_slimak.png"
+dest_files=["res://.godot/imported/spritesheet_slimak.png-0bca75b2cad89b316ebc2c9089ec5848.ctex"]
 
 [params]
 

@@ -11,6 +11,9 @@ var gravity_act = false
 func on_change_gravity(is_active):
 	gravity_act = is_active
 	gravity_scale = 0 if is_active else 1
+	var value = 0
+	$Icon.material.set_shader_parameter("is_active", false)
+	$Icon.material.set_shader_parameter("thickness", value)
 
 func _ready():
 	var materialx = ShaderMaterial.new()

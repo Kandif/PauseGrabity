@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://usmimrij3vck"
-path="res://.godot/imported/p_3.png-d8cffd78a00cea4df69df6202015b8cd.ctex"
+uid="uid://dop4ls43is1tn"
+path="res://.godot/imported/spritesheet_swietlik.png-09653177148ac8413ab22528e09193dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grafiki/particle/p_3.png"
-dest_files=["res://.godot/imported/p_3.png-d8cffd78a00cea4df69df6202015b8cd.ctex"]
+source_file="res://grafiki/swietlik/spritesheet_swietlik.png"
+dest_files=["res://.godot/imported/spritesheet_swietlik.png-09653177148ac8413ab22528e09193dc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4hy61x14vuhh"
-path="res://.godot/imported/p_4.png-65551e76cd17cd8022d3becf9283f282.ctex"
+uid="uid://casntmavpjydc"
+path="res://.godot/imported/WATER_sprite_sheet.png-8a90e49b344596afb5619dfc6686b5c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grafiki/particle/p_4.png"
-dest_files=["res://.godot/imported/p_4.png-65551e76cd17cd8022d3becf9283f282.ctex"]
+source_file="res://grafiki/water/WATER_sprite_sheet.png"
+dest_files=["res://.godot/imported/WATER_sprite_sheet.png-8a90e49b344596afb5619dfc6686b5c3.ctex"]
 
 [params]
 

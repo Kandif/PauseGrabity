@@ -28,6 +28,7 @@ shader_parameter/radius = 0.0
 shader_parameter/aberration = 0.0
 shader_parameter/width = 0.1
 shader_parameter/feather = 1.0
+shader_parameter/centerr = null
 
 [sub_resource type="Gradient" id="Gradient_bpg8e"]
 colors = PackedColorArray(1, 1, 1, 0.870588, 1, 1, 1, 0)
@@ -44,6 +45,7 @@ position = Vector2(769, 599)
 lock_rotation = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 10
 material = SubResource("ShaderMaterial_l83v4")
 offset_right = 1920.0
 offset_bottom = 1080.0
