@@ -1,13 +1,8 @@
 shader_type canvas_item;
 
-
 uniform float strength: hint_range(0.0, 0.2, 0.001) = 0.08;
 
-
 uniform float radius: hint_range(0.0, 2.5, 0.001) = 0.25;
-
-
-
 
 uniform float aberration: hint_range(0.0, 1.0, 0.001) = 0.425;
 uniform float width: hint_range(0.0, 0.1, 0.0001) = 0.04;
@@ -15,9 +10,10 @@ uniform float feather: hint_range(0.0, 1.0, 0.001) = 0.135;
 
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
-
+uniform vec2 centerr;
 
 void fragment() {
+	
 	vec2 center = -1.0 + 2.0 * UV / (1.0 / TEXTURE_PIXEL_SIZE);
 	vec2 st = SCREEN_UV;
 	float aspect_ratio = SCREEN_PIXEL_SIZE.y/SCREEN_PIXEL_SIZE.x;

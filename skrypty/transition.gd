@@ -17,7 +17,7 @@ func change_scene(xscene_path:Object) -> void:
 func restart() -> void:
 	Cosek.restart()
 	scene_path = null
-	$AnimationPlayer.play("transition")
+	$AnimationPlayer.play("restart")
 	changed = false
 	is_playing = true
 

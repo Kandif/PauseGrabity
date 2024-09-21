@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4stulquct83s"]
+[gd_scene load_steps=9 format=3 uid="uid://b4stulquct83s"]
 
 [ext_resource type="Script" path="res://skrypty/transition.gd" id="1_y6ql6"]
 [ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="2_mluwm"]
+[ext_resource type="Texture2D" uid="uid://biubrvbv7cx2h" path="res://grafiki/transition/muszla.png" id="3_7768u"]
 
 [sub_resource type="Gradient" id="Gradient_rx6hu"]
 offsets = PackedFloat32Array(0.773333, 1)
@@ -21,6 +22,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(2958, -1834)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Muszla:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1688, 423)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Muszla:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_bkpqv"]
 resource_name = "transition"
@@ -37,9 +62,37 @@ tracks/0/keys = {
 "values": [Vector2(2958, -1834), Vector2(-677, 3184)]
 }
 
+[sub_resource type="Animation" id="Animation_ra0sc"]
+resource_name = "restart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Muszla:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1688, 423), Vector2(3539, 470)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Muszla:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vplws"]
 _data = {
 "RESET": SubResource("Animation_20y0x"),
+"restart": SubResource("Animation_ra0sc"),
 "transition": SubResource("Animation_bkpqv")
 }
 
@@ -76,3 +129,8 @@ libraries = {
 position = Vector2(2958, -1834)
 scale = Vector2(20.0078, 20.0078)
 texture = ExtResource("2_mluwm")
+
+[node name="Muszla" type="Sprite2D" parent="."]
+position = Vector2(-1688, 423)
+scale = Vector2(5.06547, 5.06547)
+texture = ExtResource("3_7768u")
