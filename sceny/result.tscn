@@ -1,0 +1,252 @@
+[gd_scene load_steps=21 format=3 uid="uid://c1vy1b1fq2moo"]
+
+[ext_resource type="Script" path="res://sceny/result.gd" id="1_gsvku"]
+[ext_resource type="Texture2D" uid="uid://eh1ax6tm8tnb" path="res://grafiki/gwiazdka/gwiazdka top.png" id="2_ebpx6"]
+[ext_resource type="Texture2D" uid="uid://do64oju5x563b" path="res://grafiki/ilustacja_menu/menu.png" id="2_msjcx"]
+[ext_resource type="Texture2D" uid="uid://bun6n344qu7i5" path="res://grafiki/gwiazdka/gwiazdka bottom.png" id="3_k270m"]
+[ext_resource type="Texture2D" uid="uid://b7q770g4xg3r5" path="res://grafiki/przycisk/przycisk_onpress.png" id="5_q1g1c"]
+[ext_resource type="FontFile" uid="uid://b3bpw2ltv7x20" path="res://grafiki/czcionka/Blubux.otf" id="5_si0k3"]
+[ext_resource type="Texture2D" uid="uid://ds7xoul8oijva" path="res://grafiki/przycisk/przycisk_default.png" id="6_o27dm"]
+[ext_resource type="AudioStream" uid="uid://c4en374sm5emy" path="res://SFXy/zdobycie_gwiazdki_01.ogg" id="8_i81fj"]
+[ext_resource type="AudioStream" uid="uid://c8ugh5th2siim" path="res://SFXy/zdobycie_gwiazdki_02.ogg" id="9_5s6iy"]
+[ext_resource type="AudioStream" uid="uid://kfdakdtp6g76" path="res://SFXy/zdobycie_gwiazdki_03.ogg" id="10_xckeo"]
+
+[sub_resource type="Animation" id="Animation_2o4pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-19, 1110)]
+}
+
+[sub_resource type="Animation" id="Animation_x58at"]
+resource_name = "wchodzi"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-19, 1110), Vector2(-19, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddd5f"]
+_data = {
+"RESET": SubResource("Animation_2o4pd"),
+"wchodzi": SubResource("Animation_x58at")
+}
+
+[sub_resource type="Gradient" id="Gradient_6b74a"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0xra"]
+load_path = "res://.godot/imported/gwiazdka bottom.png-39fe7e5d71ff7f33925d4fb87a5aa49e.ctex"
+
+[sub_resource type="Gradient" id="Gradient_wqvic"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ilj32"]
+load_path = "res://.godot/imported/gwiazdka bottom.png-39fe7e5d71ff7f33925d4fb87a5aa49e.ctex"
+
+[sub_resource type="Gradient" id="Gradient_my0ug"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k02ma"]
+texture = ExtResource("5_q1g1c")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wsx4m"]
+texture = ExtResource("6_o27dm")
+
+[node name="Result" type="Control"]
+z_index = 16
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = 1110.0
+offset_right = -19.0
+offset_bottom = 1110.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_gsvku")
+metadata/_edit_lock_ = true
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(948.625, 533)
+scale = Vector2(0.822236, 0.679058)
+texture = ExtResource("2_msjcx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 498.0
+offset_top = 68.0
+offset_right = -487.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.203922, 0.203922, 0.203922, 0.615686)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ddd5f")
+}
+
+[node name="1" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(675, 312)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ebpx6")
+metadata/_edit_group_ = true
+
+[node name="4" type="Sprite2D" parent="1"]
+visible = false
+texture = ExtResource("3_k270m")
+
+[node name="CPU" type="CPUParticles2D" parent="1"]
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_k270m")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_6b74a")
+
+[node name="2" type="Sprite2D" parent="."]
+position = Vector2(919, 229)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ebpx6")
+
+[node name="4" type="Sprite2D" parent="2"]
+visible = false
+position = Vector2(1.86853, 0)
+texture = ExtResource("3_k270m")
+
+[node name="CPU" type="CPUParticles2D" parent="2"]
+position = Vector2(13.0799, 7.47412)
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+texture = SubResource("CompressedTexture2D_v0xra")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_wqvic")
+
+[node name="3" type="Sprite2D" parent="."]
+position = Vector2(1194, 309)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_ebpx6")
+metadata/_edit_group_ = true
+
+[node name="4" type="Sprite2D" parent="3"]
+visible = false
+texture = ExtResource("3_k270m")
+
+[node name="CPU" type="CPUParticles2D" parent="3"]
+position = Vector2(16.817, 11.2113)
+emitting = false
+amount = 15
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+texture = SubResource("CompressedTexture2D_ilj32")
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
+scale_amount_min = 0.1
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_my0ug")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 621.0
+offset_right = 1376.0
+offset_bottom = 953.0
+
+[node name="mapy" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_si0k3")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_wsx4m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wsx4m")
+text = "WYBÓR MAP"
+
+[node name="next" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_si0k3")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_k02ma")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_wsx4m")
+theme_override_styles/normal = SubResource("StyleBoxTexture_wsx4m")
+text = "KOLEJNA MAPA"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 514.0
+offset_top = 408.0
+offset_right = 1366.0
+offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("5_si0k3")
+theme_override_font_sizes/font_size = 100
+text = "LEVEL 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="g1" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(680, 319)
+stream = ExtResource("8_i81fj")
+
+[node name="g2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(680, 319)
+stream = ExtResource("9_5s6iy")
+
+[node name="g3" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(680, 319)
+stream = ExtResource("10_xckeo")
+
+[connection signal="pressed" from="HBoxContainer/mapy" to="." method="_on_mapy_pressed"]
+[connection signal="pressed" from="HBoxContainer/next" to="." method="_on_next_pressed"]

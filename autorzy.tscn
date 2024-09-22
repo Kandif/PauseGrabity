@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://ws2n4aogdamx"]
+
+[ext_resource type="Script" path="res://autorzy.gd" id="1_gcrn8"]
+[ext_resource type="Texture2D" uid="uid://5evc53w0yppy" path="res://grafiki/autorzy/autorzy full.png" id="2_7i61p"]
+
+[sub_resource type="Animation" id="Animation_wdmok"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AutorzyFull:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(952, -700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.196078, 0.196078, 0.196078, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hmljk"]
+resource_name = "autorzy"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AutorzyFull:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(952, -700), Vector2(952, 419)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.196078, 0.196078, 0.196078, 0), Color(0.196078, 0.196078, 0.196078, 0.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vj5yi"]
+_data = {
+"RESET": SubResource("Animation_wdmok"),
+"autorzy": SubResource("Animation_hmljk")
+}
+
+[node name="Autorzy" type="Node2D"]
+script = ExtResource("1_gcrn8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vj5yi")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -107.0
+offset_top = -128.0
+offset_right = 2133.0
+offset_bottom = 1343.0
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+color = Color(0.196078, 0.196078, 0.196078, 0)
+
+[node name="AutorzyFull" type="Sprite2D" parent="."]
+position = Vector2(952, -700)
+scale = Vector2(0.473402, 0.473402)
+texture = ExtResource("2_7i61p")

@@ -71,3 +71,4 @@ script = ExtResource("6_nfgje")
 position = Vector2(1647, 521)
 
 [node name="UI" parent="." instance=ExtResource("8_l0gd4")]
+mouse_filter = 1

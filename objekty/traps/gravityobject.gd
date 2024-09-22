@@ -15,7 +15,15 @@ func on_change_gravity(is_active):
 	$Icon.material.set_shader_parameter("is_active", false)
 	$Icon.material.set_shader_parameter("thickness", value)
 
+var simples = [
+	preload("res://grafiki/obiekty/kotwica.png"),
+	preload("res://grafiki/obiekty/mina.png"),
+	preload("res://grafiki/obiekty/opona.png")
+]
+
 func _ready():
+	if name == "pushable_simple":
+		$Icon.texture = simples[randi()%3]
 	var materialx = ShaderMaterial.new()
 	materialx.shader = border
 	materialx.set_shader_parameter("is_active", false)
@@ -49,6 +57,7 @@ func _input(event: InputEvent) -> void:
 			GvObj.object = null
 			var dir = arrow.global_position.direction_to(get_global_mouse_position())
 			var pow_fact = 100 if gravity_act else 10
+			Player.play_wrog()
 			apply_central_force(dir * arrow.get_val() * pow_fact)
 			
 func _process(delta: float) -> void:

@@ -7,8 +7,6 @@ var changed = false
 
 var scene_path:Object
 
-
-
 func change_scene(xscene_path:Object) -> void:
 	if !$AnimationPlayer.is_playing():
 		Player.play_next()
@@ -23,6 +21,7 @@ func restart() -> void:
 		Cosek.restart()
 		scene_path = null
 		$AnimationPlayer.play("restart")
+		Player.play_muszla()
 		changed = false
 		is_playing = true
 
@@ -39,3 +38,4 @@ func changing():
 		get_tree().reload_current_scene()
 	else:	
 		get_tree().change_scene_to_packed(scene_path)
+		Result.hideA()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0peapoyu6mgp"]
+[gd_scene load_steps=5 format=3 uid="uid://d0peapoyu6mgp"]
 
 [ext_resource type="Script" path="res://objekty/gravitier.gd" id="1_hnj1y"]
-[ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="1_k8cwp"]
+[ext_resource type="Texture2D" uid="uid://p341im5j4ghp" path="res://grafiki/wrogowie/wir.png" id="2_sekps"]
+[ext_resource type="AudioStream" uid="uid://cj40rspgjueue" path="res://SFXy/wir.ogg" id="3_gjbjy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2bb5i"]
 radius = 93.0484
@@ -16,10 +17,16 @@ gravity = 2000.0
 script = ExtResource("1_hnj1y")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-1, 1)
-scale = Vector2(1.34375, 1.34375)
-texture = ExtResource("1_k8cwp")
+position = Vector2(1, 1)
+scale = Vector2(0.310239, 0.310239)
+texture = ExtResource("2_sekps")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_2bb5i")
+
+[node name="wir" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gjbjy")
+bus = &"sfx"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,9 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4stulquct83s"]
+[gd_scene load_steps=11 format=3 uid="uid://b4stulquct83s"]
 
 [ext_resource type="Script" path="res://skrypty/transition.gd" id="1_y6ql6"]
 [ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="2_mluwm"]
 [ext_resource type="Texture2D" uid="uid://d3g57q6ivvxs4" path="res://grafiki/transition/muszla.png" id="3_7768u"]
-[ext_resource type="Texture2D" uid="uid://dry1d7clgvl0m" path="res://grafiki/salad.png" id="3_buk3f"]
+[ext_resource type="Texture2D" uid="uid://bc4oes14v018n" path="res://grafiki/obiekty/kometa.png" id="3_p3brw"]
 
 [sub_resource type="Gradient" id="Gradient_rx6hu"]
 offsets = PackedFloat32Array(0.773333, 1)
@@ -21,7 +21,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(2958, -1834)]
+"values": [Vector2(3182, -2335)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -87,7 +87,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2958, -1834), Vector2(-677, 3184)]
+"values": [Vector2(3576, -2205), Vector2(-677, 3184)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vplws"]
@@ -96,6 +96,10 @@ _data = {
 "restart": SubResource("Animation_ra0sc"),
 "transition": SubResource("Animation_bkpqv")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iw6sk"]
+atlas = ExtResource("3_p3brw")
+region = Rect2(-409.164, -328.696, 2686.29, 3089.24)
 
 [node name="Transition" type="CanvasLayer"]
 script = ExtResource("1_y6ql6")
@@ -127,9 +131,10 @@ libraries = {
 }
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2958, -1834)
-scale = Vector2(8, 8)
-texture = ExtResource("3_buk3f")
+position = Vector2(3182, -2335)
+scale = Vector2(1.90667, 1.90668)
+texture = SubResource("AtlasTexture_iw6sk")
+flip_h = true
 
 [node name="Muszla" type="Sprite2D" parent="."]
 position = Vector2(-1688, 423)

@@ -7,6 +7,8 @@ var particle
 
 var is_gravity_paused = false
 
+var licznik = 0
+
 @onready var timer = $pause_gravity_timer
 
 var ob_pos:Vector2
@@ -18,7 +20,6 @@ var factor = 0:
 	set(value):
 		factor = value
 		effect_rect.material.set_shader_parameter("factor",factor)
-	
 		
 func update_cosek_effect(pos:Vector2):
 	ob_pos = pos
@@ -28,26 +29,23 @@ func disable_effect():
 	is_pushing = false
 	
 func restart():
+	licznik = 0
 	if is_gravity_paused:
 		Player.back_gravity()
 		$tyk.stop()
 		$graw.stop()
+	$circle_timer.value = 100
 	$circle_timer.visible = false
 	is_gravity_paused = false
 	is_pushing = false
 	timer.stop()
-	var simple_tween = get_tree().create_tween()
-	simple_tween.tween_property(effect_rect.material,"shader_parameter/radius",0,0.5)
+	if effect_rect!= null:
+		var simple_tween = get_tree().create_tween()
+		simple_tween.tween_property(effect_rect.material,"shader_parameter/radius",0,0.5)
 
 func _physics_process(delta: float) -> void:
 	if !is_gravity_paused and $circle_timer.value<100:
 		$circle_timer.value += 75 * delta
-		
-	if Input.is_key_pressed(KEY_F1):
-		for object in get_tree().get_nodes_in_group("gravity"):
-			object.visible = false
-		for object in get_tree().get_nodes_in_group("enemy"):
-			object.visible = false	
 	
 	angle += delta * 360
 	if angle>=360:
@@ -64,8 +62,9 @@ func _physics_process(delta: float) -> void:
 		final_pos = ob_pos + Vector2.RIGHT.rotated(deg_to_rad(angle)) * 100
 		global_position = global_position.move_toward(final_pos,SPEED)
 		
-	if Input.is_action_just_pressed("pause_gravity") and !is_gravity_paused and $circle_timer.value == 100:
+	if effect_rect!= null and Input.is_action_just_pressed("pause_gravity") and !is_gravity_paused and $circle_timer.value == 100:
 		Player.play_gravity()
+		licznik += 1
 		$tyk.play()
 		$graw.play()
 		is_gravity_paused = true
