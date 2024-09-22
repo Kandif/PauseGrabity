@@ -7,8 +7,11 @@ var changed = false
 
 var scene_path:Object
 
+
+
 func change_scene(xscene_path:Object) -> void:
 	if !$AnimationPlayer.is_playing():
+		Player.play_next()
 		Cosek.restart()
 		scene_path = xscene_path
 		$AnimationPlayer.play("transition")
