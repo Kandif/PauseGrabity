@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Tutorial_z_grawitacją.ogg-4896e55db1a1b79bf5
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

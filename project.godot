@@ -21,8 +21,9 @@ GvObj="*res://skrypty/GvObj.gd"
 Transition="*res://objekty/transition.tscn"
 Arrow="*res://arrow.tscn"
 Cosek="*res://objekty/cosek/cosek.tscn"
-Maps="*res://maps.gd"
 Player="*res://sceny/music.tscn"
+Maps="*res://maps.gd"
+Settings="*res://sceny/settings.tscn"
 
 [display]
 
@@ -52,7 +53,6 @@ restart={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+environment/defaults/default_clear_color=Color(0.473976, 0.473976, 0.473976, 1)

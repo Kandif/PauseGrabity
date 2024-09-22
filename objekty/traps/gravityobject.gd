@@ -36,14 +36,17 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if gravity_act and event is InputEventMouseButton:
 		var evbt:InputEventMouseButton = event
 		if evbt.is_pressed() and evbt.button_index == MOUSE_BUTTON_LEFT:
-			arrow.visible = true
-			arrow.global_position = global_position
 			clicked = true
+			GvObj.object = self
+			#arrow.visible = true
+			#arrow.global_position = global_position
+			#clicked = true
 			
 func _input(event: InputEvent) -> void:
 		if event is InputEventMouseButton and clicked and event.is_released() and event.button_index == MOUSE_BUTTON_LEFT:	
 			clicked = false
 			arrow.visible = false
+			GvObj.object = null
 			var dir = arrow.global_position.direction_to(get_global_mouse_position())
 			var pow_fact = 100 if gravity_act else 10
 			apply_central_force(dir * arrow.get_val() * pow_fact)

@@ -1,21 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1vy1b1fq2moo"]
+[gd_scene load_steps=8 format=3 uid="uid://c1vy1b1fq2moo"]
 
 [ext_resource type="Script" path="res://skrypty/settings.gd" id="1_l4hk0"]
+[ext_resource type="Texture2D" uid="uid://dvb44i5cd7vtd" path="res://grafiki/wrogowie/dlugel.png" id="3_r5cy7"]
+
+[sub_resource type="Theme" id="Theme_c8lpf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l1phb"]
+texture = ExtResource("3_r5cy7")
+expand_margin_top = 100.0
+expand_margin_bottom = 100.0
+
+[sub_resource type="Animation" id="Animation_x58at"]
+resource_name = "wchodzi"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-19, 1110), Vector2(-19, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2o4pd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-19, 1110)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddd5f"]
+_data = {
+"RESET": SubResource("Animation_2o4pd"),
+"wchodzi": SubResource("Animation_x58at")
+}
 
 [node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = 1110.0
+offset_right = -19.0
+offset_bottom = 1110.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l4hk0")
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 498.0
+offset_top = 68.0
+offset_right = -487.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.203922, 0.203922, 0.203922, 0.615686)
@@ -36,9 +88,14 @@ text = "RAM TAM TAM
 "
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+[node name="music" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = SubResource("Theme_c8lpf")
+theme_override_styles/slider = SubResource("StyleBoxTexture_l1phb")
+max_value = 1.0
+step = 0.05
+value = 0.5
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -47,12 +104,26 @@ theme_override_font_sizes/font_size = 35
 text = "STUKOTY JAKIEŚ"
 horizontal_alignment = 1
 
-[node name="HSlider2" type="HSlider" parent="VBoxContainer"]
+[node name="sounds" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = SubResource("Theme_c8lpf")
+theme_override_styles/slider = SubResource("StyleBoxTexture_l1phb")
+max_value = 1.0
+step = 0.05
+value = 0.5
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 35
 text = "WRACAM"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ddd5f")
+}
+
+[connection signal="value_changed" from="VBoxContainer/music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/sounds" to="." method="_on_sounds_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

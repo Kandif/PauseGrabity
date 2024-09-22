@@ -1,21 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://cc6ef8hq5xmr8"]
+[gd_scene load_steps=8 format=3 uid="uid://cc6ef8hq5xmr8"]
 
 [ext_resource type="Script" path="res://skrypty/music.gd" id="1_ofodi"]
-[ext_resource type="AudioStream" uid="uid://bwoc2m6lbjcgl" path="res://muzyczka/GAMEPLAY_BEZ_GRAWI.ogg" id="2_u5i55"]
-[ext_resource type="AudioStream" uid="uid://d31fgajhr014h" path="res://muzyczka/GAMEPLAY_Z_GRAWI.ogg" id="3_pdckc"]
+[ext_resource type="AudioStream" uid="uid://ddepd4us7dkbv" path="res://muzyczka/Muzyka_gameplay_z_grawitacją.ogg" id="2_mvgs3"]
+[ext_resource type="AudioStream" uid="uid://cand6qy10737x" path="res://muzyczka/Muzyka_gameplay_wyłączenie_grawitacji.ogg" id="3_8ib8f"]
+[ext_resource type="AudioStream" uid="uid://dlmb8fw4b1fw7" path="res://muzyczka/Tutorial_z_grawitacją.ogg" id="4_8oqam"]
+[ext_resource type="AudioStream" uid="uid://coiesahuh1wof" path="res://muzyczka/Tutorial_wyłączenie_grawitacji.ogg" id="5_r23tf"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_q0inq"]
 stream_count = 2
-stream_0/stream = ExtResource("2_u5i55")
+stream_0/stream = ExtResource("3_8ib8f")
 stream_0/volume = 0.0
-stream_1/stream = ExtResource("3_pdckc")
+stream_1/stream = ExtResource("2_mvgs3")
+stream_1/volume = -60.0
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_3blc7"]
+stream_count = 2
+stream_0/stream = ExtResource("4_8oqam")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("5_r23tf")
 stream_1/volume = -60.0
 
 [node name="Music" type="Node2D"]
 script = ExtResource("1_ofodi")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="main" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_q0inq")
-autoplay = true
+volume_db = -80.0
+bus = &"music"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="tutorial" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamSynchronized_3blc7")
+volume_db = -80.0
+bus = &"music"

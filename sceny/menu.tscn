@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://ou4wk374et8d"]
+[gd_scene load_steps=3 format=3 uid="uid://ou4wk374et8d"]
 
 [ext_resource type="Script" path="res://sceny/menu.gd" id="1_itech"]
+[ext_resource type="Texture2D" uid="uid://kevctxvl7aan" path="res://grafiki/tlo_menu.png" id="2_0csg6"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_itech")
 
+[node name="TloMenu" type="Sprite2D" parent="."]
+position = Vector2(759, 451)
+scale = Vector2(1.40086, 1.40086)
+texture = ExtResource("2_0csg6")
+
 [node name="buttons" type="VBoxContainer" parent="."]
-offset_left = 291.0
-offset_top = 43.0
-offset_right = 1529.0
-offset_bottom = 1029.0
+offset_left = 48.0
+offset_top = 245.0
+offset_right = 544.0
+offset_bottom = 853.0
 
 [node name="start" type="Button" parent="buttons"]
 custom_minimum_size = Vector2(0, 200)

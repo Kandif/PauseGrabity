@@ -4,15 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="2_hwgrg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jpihi"]
-radius = 58.3095
+radius = 64.0312
 
 [node name="pushable_simple" type="RigidBody2D" groups=["gravity"]]
 input_pickable = true
 script = ExtResource("1_o1ehd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jpihi")
-
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(3, 5)
 texture = ExtResource("2_hwgrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 7)
+shape = SubResource("CircleShape2D_jpihi")
