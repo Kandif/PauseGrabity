@@ -14,6 +14,15 @@ var rzut = [
 	preload("res://SFXy/rzut_ślimakiem_02.ogg")
 ]
 
+var winer = true
+
+func win():
+	winer = true
+	$CollisionShape2D.disabled = true
+	$body.disabled = true
+	var tween = get_tree().create_tween()
+	tween.tween_property($Icon,"scale",Vector2(0,0),0.5)
+
 func on_change_gravity(is_active):
 	gravity_act = is_active
 	gravity_scale = 0 if is_active else 1
@@ -41,6 +50,7 @@ func on_change_gravity(is_active):
 		landed = false
 
 func _ready() -> void:
+	winer = false
 	$Area2D.mouse_entered.connect(is_border.bind(true))
 	$Area2D.mouse_exited.connect(is_border.bind(false))
 	$Area2D.input_event.connect(_on_input_event)
@@ -71,9 +81,10 @@ func _input(event: InputEvent) -> void:
 		$rzut.pitch_scale = randf_range(0.5,1.5)
 		$rzut.play()
 		#if !is_hidden:
-			
 		
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("real_pause") and !winer:
+		PauseMenu.pause()
 	#$test.rotation = -rotation
 	if  !landed and !gravity_act and $test.is_on_floor and linear_velocity.length() < 10:
 		landed = true
@@ -98,7 +109,7 @@ func _process(delta: float) -> void:
 		arrow.set_val(dist/2)
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") and !winer:
 		Player.play_lose()
 		$Icon.modulate = Color.RED
 		Transition.restart()

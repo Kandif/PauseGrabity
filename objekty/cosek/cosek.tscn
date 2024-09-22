@@ -310,12 +310,15 @@ offsets = PackedFloat32Array(0, 0.933333)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.0117647)
 
 [node name="Cosek" type="Area2D"]
+process_mode = 3
 z_index = 30
 input_pickable = false
 script = ExtResource("1_a18oa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_o72n8")
+disabled = true
 
 [node name="Icon" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.52771, 1.76637)
@@ -323,7 +326,7 @@ scale = Vector2(0.25184, 0.251839)
 sprite_frames = SubResource("SpriteFrames_k5vpj")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.959528
+frame_progress = 0.0215942
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Icon"]
 position = Vector2(-0.423859, 15.0193)
@@ -355,6 +358,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="circle_timer" type="TextureProgressBar" parent="."]
+visible = false
 texture_filter = 4
 offset_left = -75.0
 offset_top = -75.0

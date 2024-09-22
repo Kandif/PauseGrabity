@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1vy1b1fq2moo"]
+[gd_scene load_steps=8 format=3 uid="uid://ck2ifuukg1sp"]
 
 [ext_resource type="Script" path="res://skrypty/settings.gd" id="1_l4hk0"]
 [ext_resource type="Texture2D" uid="uid://eh1ax6tm8tnb" path="res://grafiki/gwiazdka/gwiazdka top.png" id="2_ebpx6"]
@@ -96,8 +96,8 @@ texture = ExtResource("3_k270m")
 direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(0, 10)
-initial_velocity_min = 100.0
-initial_velocity_max = 500.0
+initial_velocity_min = 400.0
+initial_velocity_max = 400.0
 scale_amount_min = 0.1
 scale_amount_max = 0.4
 color_ramp = SubResource("Gradient_6b74a")
@@ -112,23 +112,6 @@ visible = false
 position = Vector2(1.86853, 0)
 texture = ExtResource("3_k270m")
 
-[node name="CPU" type="CPUParticles2D" parent="2"]
-position = Vector2(-534.404, 151.352)
-emitting = false
-amount = 15
-lifetime = 2.0
-one_shot = true
-explosiveness = 1.0
-texture = ExtResource("3_k270m")
-direction = Vector2(0, 0)
-spread = 180.0
-gravity = Vector2(0, 10)
-initial_velocity_min = 100.0
-initial_velocity_max = 500.0
-scale_amount_min = 0.1
-scale_amount_max = 0.4
-color_ramp = SubResource("Gradient_6b74a")
-
 [node name="3" type="Sprite2D" parent="."]
 position = Vector2(1247, 340)
 scale = Vector2(0.535176, 0.535176)
@@ -137,20 +120,3 @@ texture = ExtResource("2_ebpx6")
 [node name="4" type="Sprite2D" parent="3"]
 visible = false
 texture = ExtResource("3_k270m")
-
-[node name="CPU" type="CPUParticles2D" parent="3"]
-position = Vector2(-1102.44, -20.554)
-emitting = false
-amount = 15
-lifetime = 2.0
-one_shot = true
-explosiveness = 1.0
-texture = ExtResource("3_k270m")
-direction = Vector2(0, 0)
-spread = 180.0
-gravity = Vector2(0, 10)
-initial_velocity_min = 100.0
-initial_velocity_max = 500.0
-scale_amount_min = 0.1
-scale_amount_max = 0.4
-color_ramp = SubResource("Gradient_6b74a")

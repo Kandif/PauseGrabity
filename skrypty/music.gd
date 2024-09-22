@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var main_music:AudioStreamPlayer = $main
 @onready var tutorial:AudioStreamPlayer = $tutorial
+@onready var menu:AudioStreamPlayer = $menu
+@onready var pause:AudioStreamPlayer = $pausa
+
+var before_pause = ""
 
 var index = 0
 var last_music = ""
@@ -18,23 +22,52 @@ func play_lose():
 func play_win():
 	$win.play()
 	
+func play_muszla():
+	$muszla.play()	
+	
+func play_wrog():
+	$rzut_wrogiem.pitch_scale = randf_range(0.5,1.5)
+	$rzut_wrogiem.play()
+	
 func play(music_name:String):
+	if music_name == "before":
+		music_name = before_pause
 	if last_music != music_name:
-		last_music = music_name
 		var tween = get_tree().create_tween()
 		tween.parallel().tween_property(main_music,"volume_db",-80,0.2)
 		tween.parallel().tween_property(tutorial,"volume_db",-80,0.2)
+		tween.parallel().tween_property(menu,"volume_db",-80,0.2)
+		tween.parallel().tween_property(pause,"volume_db",-80,0.2)
+		if music_name != "pause":
+			await tween.finished
+		tween = get_tree().create_tween()
 		match(music_name):
 			"main":
 				main_music.play()
-				tween.parallel().tween_property(main_music,"volume_db",0,0.2)
-				await tween.finished
+				tween.tween_property(main_music,"volume_db",0,0.2)
 				tutorial.stop()
+				menu.stop()
+				pause.stop()
 			"tutorial":
 				tutorial.play()
-				tween.parallel().tween_property(tutorial,"volume_db",0,0.2)
-				await tween.finished
+				tween.tween_property(tutorial,"volume_db",0,0.2)
 				main_music.stop()
+				menu.stop()
+				pause.stop()
+			"menu":
+				menu.play()
+				tween.tween_property(menu,"volume_db",0,0.2)
+				main_music.stop()
+				tutorial.stop()
+				pause.stop()
+			"pause":
+				before_pause = last_music
+				pause.play()
+				pause.volume_db = 0
+				main_music.stop()
+				tutorial.stop()
+				menu.stop()	
+		last_music = music_name		
 
 
 func play_gravity():

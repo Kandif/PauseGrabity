@@ -70,6 +70,9 @@ position = Vector2(469, 754)
 
 [node name="UI" parent="." instance=ExtResource("8_b4k18")]
 id = 2
+star2 = 4
+star3 = 2
+id_map = 5
 
 [node name="Gravitier" parent="." instance=ExtResource("9_l6pac")]
 position = Vector2(1651, 219)
@@ -85,7 +88,7 @@ z_index = 10
 material = SubResource("ShaderMaterial_l83v4")
 offset_right = 1920.0
 offset_bottom = 1080.0
-mouse_filter = 1
+mouse_filter = 2
 color = Color(1, 1, 1, 0.243137)
 script = ExtResource("4_vijmk")
 metadata/_edit_lock_ = true

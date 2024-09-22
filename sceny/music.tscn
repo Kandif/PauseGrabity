@@ -1,13 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://cc6ef8hq5xmr8"]
+[gd_scene load_steps=15 format=3 uid="uid://cc6ef8hq5xmr8"]
 
 [ext_resource type="Script" path="res://skrypty/music.gd" id="1_ofodi"]
 [ext_resource type="AudioStream" uid="uid://ddepd4us7dkbv" path="res://muzyczka/Muzyka_gameplay_z_grawitacją.ogg" id="2_mvgs3"]
 [ext_resource type="AudioStream" uid="uid://cand6qy10737x" path="res://muzyczka/Muzyka_gameplay_wyłączenie_grawitacji.ogg" id="3_8ib8f"]
 [ext_resource type="AudioStream" uid="uid://dlmb8fw4b1fw7" path="res://muzyczka/Tutorial_z_grawitacją.ogg" id="4_8oqam"]
 [ext_resource type="AudioStream" uid="uid://coiesahuh1wof" path="res://muzyczka/Tutorial_wyłączenie_grawitacji.ogg" id="5_r23tf"]
+[ext_resource type="AudioStream" uid="uid://b8giunadjo72c" path="res://muzyczka/Menu.ogg" id="6_2g4ms"]
 [ext_resource type="AudioStream" uid="uid://8qrpam3u0ibf" path="res://SFXy/zmiana_mapy.ogg" id="6_bkvos"]
+[ext_resource type="AudioStream" uid="uid://bf5eyhx1o2n1f" path="res://muzyczka/MuzykaPauza.ogg" id="7_2qsql"]
 [ext_resource type="AudioStream" uid="uid://iew4p4s5mk46" path="res://SFXy/przegranie_gry_01.ogg" id="7_gwgtt"]
 [ext_resource type="AudioStream" uid="uid://d0je61xlagne8" path="res://SFXy/dojście_do_mety.ogg" id="8_p3avk"]
+[ext_resource type="AudioStream" uid="uid://ciprxvrl22ng6" path="res://SFXy/rzut_przeciwnikiem.ogg" id="9_rgsba"]
+[ext_resource type="AudioStream" uid="uid://dnerlagrsx8n3" path="res://SFXy/muszla_toczy_sie.ogg" id="11_8tgek"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_q0inq"]
 stream_count = 2
@@ -24,6 +28,7 @@ stream_1/stream = ExtResource("5_r23tf")
 stream_1/volume = -60.0
 
 [node name="Music" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_ofodi")
 
 [node name="main" type="AudioStreamPlayer" parent="."]
@@ -33,6 +38,15 @@ bus = &"music"
 
 [node name="tutorial" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamSynchronized_3blc7")
+bus = &"music"
+
+[node name="menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_2g4ms")
+volume_db = -80.0
+bus = &"music"
+
+[node name="pausa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_2qsql")
 volume_db = -80.0
 bus = &"music"
 
@@ -46,4 +60,12 @@ bus = &"sfx"
 
 [node name="win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_p3avk")
+bus = &"sfx"
+
+[node name="rzut_wrogiem" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_rgsba")
+bus = &"sfx"
+
+[node name="muszla" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_8tgek")
 bus = &"sfx"

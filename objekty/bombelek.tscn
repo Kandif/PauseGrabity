@@ -1,4 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtsxrk85c0xqb"]
+[gd_scene load_steps=15 format=3 uid="uid://dtsxrk85c0xqb"]
+
+[ext_resource type="Texture2D" uid="uid://btthni556v5im" path="res://grafiki/bombelek/bombelek.png" id="1_rpqpj"]
+[ext_resource type="Script" path="res://objekty/bombelek.gd" id="1_she8q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w7wjl"]
 
@@ -16,7 +19,70 @@ material = SubResource("StandardMaterial3D_sxdnt")
 [sub_resource type="CircleShape2D" id="CircleShape2D_bsxdp"]
 radius = 79.0569
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ok22p"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(0, 0, 452, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62sxr"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(452, 0, 452, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asl01"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(904, 0, 452, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urdce"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(1356, 0, 452, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0yjl"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(1808, 0, 452, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3fxa"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(2260, 0, 452, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t15c"]
+atlas = ExtResource("1_rpqpj")
+region = Rect2(0, 0, 452, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5o2l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ok22p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62sxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asl01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urdce")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0yjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3fxa")
+}],
+"loop": false,
+"name": &"penk",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t15c")
+}],
+"loop": true,
+"name": &"ta",
+"speed": 5.0
+}]
+
 [node name="Bombelek" type="RigidBody2D"]
+process_mode = 3
 collision_mask = 8
 input_pickable = true
 mass = 0.001
@@ -24,11 +90,24 @@ physics_material_override = SubResource("PhysicsMaterial_w7wjl")
 gravity_scale = -0.2
 contact_monitor = true
 max_contacts_reported = 3
+script = ExtResource("1_she8q")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
 position = Vector2(0.999999, 1.00001)
 scale = Vector2(76.0862, 74)
 mesh = SubResource("SphereMesh_4nolb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bsxdp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(0.245575, 0.245575)
+sprite_frames = SubResource("SpriteFrames_f5o2l")
+animation = &"ta"
+autoplay = "ta"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

@@ -3,9 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Player.play("menu")
+	
 	for butt in $buttons.get_children():
-		butt.pressed.connect(menu.bind(butt.name))
+		butt.button_up.connect(menu.bind(butt.name))
 
+var scene = preload("res://stage_select.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -15,8 +18,8 @@ func _process(delta: float) -> void:
 func menu(button_name:String) -> void:
 	match(button_name):
 		"start":
-			Maps.next_map()
+			Transition.change_scene(scene)
 		"options":
 			pass
 		"about":
-			pass	
+			$Autorzy.open()

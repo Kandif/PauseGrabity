@@ -553,7 +553,7 @@ centered = false
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i4bw0")
 autoplay = "default"
-frame_progress = 0.326561
+frame_progress = 0.99407
 centered = false
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
