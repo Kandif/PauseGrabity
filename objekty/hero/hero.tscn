@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://boroua2ywk2fw"]
+[gd_scene load_steps=162 format=3 uid="uid://boroua2ywk2fw"]
 
 [ext_resource type="Shader" path="res://objekty/hero/border.gdshader" id="1_4hbui"]
 [ext_resource type="Script" path="res://objekty/hero/hero.gd" id="1_kasnn"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dbcqh3dx78noh" path="res://grafiki/slimor/fall spritesheet.png" id="5_ucvj1"]
 [ext_resource type="Texture2D" uid="uid://8napuqtiekxr" path="res://grafiki/slimor/fall to idle spritesheet.png" id="6_0uo1t"]
 [ext_resource type="Texture2D" uid="uid://c7jg7diqn1cic" path="res://grafiki/slimor/idle spritesheet.png" id="8_vg1ln"]
+[ext_resource type="AudioStream" uid="uid://dp7aydqwbnrx1" path="res://SFXy/rzut_ślimakiem_01.ogg" id="10_q0fft"]
+[ext_resource type="AudioStream" uid="uid://5b2goatx0pcy" path="res://SFXy/odwinięcie_ślimaka.ogg" id="11_svwhd"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6ymqe"]
 rough = true
@@ -1127,5 +1129,13 @@ collision_mask = 16
 visible = false
 position = Vector2(1, -11)
 shape = SubResource("CircleShape2D_swe63")
+
+[node name="rzut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_q0fft")
+bus = &"sfx"
+
+[node name="odw" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_svwhd")
+bus = &"sfx"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

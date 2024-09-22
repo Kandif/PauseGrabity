@@ -9,6 +9,15 @@ var last_music = ""
 #func _ready() -> void:
 	#play("tutorial")
 	
+func play_next():
+	$next_level.play()
+
+func play_lose():
+	$lose.play()
+	
+func play_win():
+	$win.play()
+	
 func play(music_name:String):
 	if last_music != music_name:
 		last_music = music_name

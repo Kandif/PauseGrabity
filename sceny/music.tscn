@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc6ef8hq5xmr8"]
+[gd_scene load_steps=11 format=3 uid="uid://cc6ef8hq5xmr8"]
 
 [ext_resource type="Script" path="res://skrypty/music.gd" id="1_ofodi"]
 [ext_resource type="AudioStream" uid="uid://ddepd4us7dkbv" path="res://muzyczka/Muzyka_gameplay_z_grawitacją.ogg" id="2_mvgs3"]
 [ext_resource type="AudioStream" uid="uid://cand6qy10737x" path="res://muzyczka/Muzyka_gameplay_wyłączenie_grawitacji.ogg" id="3_8ib8f"]
 [ext_resource type="AudioStream" uid="uid://dlmb8fw4b1fw7" path="res://muzyczka/Tutorial_z_grawitacją.ogg" id="4_8oqam"]
 [ext_resource type="AudioStream" uid="uid://coiesahuh1wof" path="res://muzyczka/Tutorial_wyłączenie_grawitacji.ogg" id="5_r23tf"]
+[ext_resource type="AudioStream" uid="uid://8qrpam3u0ibf" path="res://SFXy/zmiana_mapy.ogg" id="6_bkvos"]
+[ext_resource type="AudioStream" uid="uid://iew4p4s5mk46" path="res://SFXy/przegranie_gry_01.ogg" id="7_gwgtt"]
+[ext_resource type="AudioStream" uid="uid://d0je61xlagne8" path="res://SFXy/dojście_do_mety.ogg" id="8_p3avk"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_q0inq"]
 stream_count = 2
@@ -32,3 +35,15 @@ bus = &"music"
 stream = SubResource("AudioStreamSynchronized_3blc7")
 volume_db = -80.0
 bus = &"music"
+
+[node name="next_level" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_bkvos")
+bus = &"sfx"
+
+[node name="lose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_gwgtt")
+bus = &"sfx"
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_p3avk")
+bus = &"sfx"

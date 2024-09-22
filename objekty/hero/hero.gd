@@ -9,6 +9,11 @@ var landed = true
 @onready var arrow = Arrow
 @onready var cosek = Cosek
 
+var rzut = [
+	preload("res://SFXy/rzut_ślimakiem_01.ogg"),
+	preload("res://SFXy/rzut_ślimakiem_02.ogg")
+]
+
 func on_change_gravity(is_active):
 	gravity_act = is_active
 	gravity_scale = 0 if is_active else 1
@@ -28,7 +33,8 @@ func on_change_gravity(is_active):
 		simple_tween.tween_property(self,"rotation_degrees",0,0.3)
 		lock_rotation = !is_active
 		is_hidden = true
-		$Icon.play("hide_to_fall")	
+		$Icon.play("hide_to_fall")
+		$odw.play()
 		$body.disabled = true
 		await $Icon.animation_finished
 		$Icon.play("fall")
@@ -61,6 +67,9 @@ func _input(event: InputEvent) -> void:
 		var dir = arrow.global_position.direction_to(get_global_mouse_position())
 		var pow_fact = 150 if gravity_act else 10
 		apply_central_force(dir * arrow.get_val() * pow_fact)
+		$rzut.stream = rzut[randi()%2]
+		$rzut.pitch_scale = randf_range(0.5,1.5)
+		$rzut.play()
 		#if !is_hidden:
 			
 		
@@ -90,5 +99,6 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("enemy"):
+		Player.play_lose()
 		$Icon.modulate = Color.RED
 		Transition.restart()

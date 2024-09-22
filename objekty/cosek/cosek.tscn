@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cljre5i1kmqg8"]
+[gd_scene load_steps=52 format=3 uid="uid://cljre5i1kmqg8"]
 
 [ext_resource type="Script" path="res://objekty/cosek/cosek.gd" id="1_a18oa"]
 [ext_resource type="Texture2D" uid="uid://dnbwohhinhyk3" path="res://icon.svg" id="2_ds8fu"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bd1xqxjjt8rbt" path="res://grafiki/swietlik/u_swietlik spritesheet.png" id="3_i1ydn"]
 [ext_resource type="Texture2D" uid="uid://b2unvvjyc7ltg" path="res://grafiki/kolo/kolo top.png" id="5_0oqv6"]
 [ext_resource type="Texture2D" uid="uid://dhtqth6ofecq8" path="res://grafiki/kolo/kolo bottom.png" id="6_dp5uf"]
+[ext_resource type="AudioStream" uid="uid://bxfvp71aak4x0" path="res://SFXy/tykanie_zegara_grawitacja_on.ogg" id="7_k2832"]
+[ext_resource type="AudioStream" uid="uid://csngm4rko6ov8" path="res://SFXy/zatrzymanie_grawitacji.ogg" id="8_0tom7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o72n8"]
 radius = 18.6815
@@ -321,7 +323,7 @@ scale = Vector2(0.25184, 0.251839)
 sprite_frames = SubResource("SpriteFrames_k5vpj")
 animation = &"new_animation"
 autoplay = "new_animation"
-frame_progress = 0.675616
+frame_progress = 0.959528
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="Icon"]
 position = Vector2(-0.423859, 15.0193)
@@ -363,5 +365,13 @@ value = 50.0
 fill_mode = 4
 texture_over = ExtResource("5_0oqv6")
 texture_progress = ExtResource("6_dp5uf")
+
+[node name="tyk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_k2832")
+bus = &"sfx"
+
+[node name="graw" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_0tom7")
+bus = &"sfx"
 
 [connection signal="timeout" from="pause_gravity_timer" to="." method="_on_pause_gravity_timer_timeout"]

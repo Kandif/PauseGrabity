@@ -30,6 +30,8 @@ func disable_effect():
 func restart():
 	if is_gravity_paused:
 		Player.back_gravity()
+		$tyk.stop()
+		$graw.stop()
 	$circle_timer.visible = false
 	is_gravity_paused = false
 	is_pushing = false
@@ -64,6 +66,8 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("pause_gravity") and !is_gravity_paused and $circle_timer.value == 100:
 		Player.play_gravity()
+		$tyk.play()
+		$graw.play()
 		is_gravity_paused = true
 		for object in get_tree().get_nodes_in_group("gravity"):
 			object.on_change_gravity(true)
