@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b4ifkpnbxsuex"]
+[gd_scene load_steps=17 format=4 uid="uid://b4ifkpnbxsuex"]
 
 [ext_resource type="Texture2D" uid="uid://dm3bg864yi146" path="res://grafiki/testtile.png" id="1_7pla6"]
 [ext_resource type="PackedScene" uid="uid://boroua2ywk2fw" path="res://objekty/hero/hero.tscn" id="2_efue1"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://gv38521n5nyk" path="res://objekty/untouachable_flyer.tscn" id="9_0qhv1"]
 [ext_resource type="PackedScene" uid="uid://bmlo4je4ugqkx" path="res://sceny/pushable_simple.tscn" id="10_wxi4h"]
 [ext_resource type="Texture2D" uid="uid://b4t68cmh11nhk" path="res://grafiki/walls/walltutorial4_green.png" id="11_1wy70"]
+[ext_resource type="PackedScene" uid="uid://c7b3qdu5o2ngo" path="res://ramkatut.tscn" id="12_xtbjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3dn0"]
 texture = ExtResource("1_7pla6")
@@ -98,3 +99,21 @@ mass = 0.5
 [node name="Walltutorial4Green" type="Sprite2D" parent="."]
 texture = ExtResource("11_1wy70")
 centered = false
+
+[node name="RAMKA" parent="." instance=ExtResource("12_xtbjp")]
+z_index = 10
+position = Vector2(131, -25)
+metadata/_edit_group_ = true
+
+[node name="Label" parent="RAMKA" index="1"]
+offset_left = 720.0
+offset_top = 381.0
+offset_right = 1172.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 40
+text = "Nie wszystkie przeszkody da sie zlapac, ale sa tez obiekty ktore pomoga je wypchnac. Powodzenia."
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[editable path="RAMKA"]

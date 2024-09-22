@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dflo3n06gvasp"]
+[gd_scene load_steps=18 format=4 uid="uid://dflo3n06gvasp"]
 
 [ext_resource type="Script" path="res://sceny/maps/map.gd" id="1_1cqek"]
 [ext_resource type="Texture2D" uid="uid://dm3bg864yi146" path="res://grafiki/testtile.png" id="1_7eruc"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dov6a3y6s2s1i" path="res://sceny/meta.tscn" id="7_kv5rk"]
 [ext_resource type="PackedScene" uid="uid://bmcehtagf1joq" path="res://sceny/ui.tscn" id="8_pqfvd"]
 [ext_resource type="Texture2D" uid="uid://dso77yd8cygk5" path="res://grafiki/walls/walltutorial1_green.png" id="11_mgn78"]
+[ext_resource type="PackedScene" uid="uid://c7b3qdu5o2ngo" path="res://ramkatut.tscn" id="12_iicn2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3dn0"]
 texture = ExtResource("1_7eruc")
@@ -94,3 +95,20 @@ star3 = 1
 [node name="Walltutorial1Green" type="Sprite2D" parent="."]
 texture = ExtResource("11_mgn78")
 centered = false
+
+[node name="RAMKA" parent="." instance=ExtResource("12_iicn2")]
+position = Vector2(17, -18)
+
+[node name="Label" parent="RAMKA" index="1"]
+offset_left = 712.0
+offset_top = 381.0
+offset_right = 1176.0
+offset_bottom = 781.0
+theme_override_font_sizes/font_size = 35
+text = "Zpauzuj grawitacje klikajac lewy przycisk myszy. Prawym przyciskiem przeciagaj slimaka aby dostal sie do kapusty.
+Pamietaj ze pauza grawitacji nie trwa wiecznie. Po niej musisz odczekac chwilke."
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[editable path="RAMKA"]

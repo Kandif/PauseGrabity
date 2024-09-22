@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ou4wk374et8d"]
+[gd_scene load_steps=10 format=3 uid="uid://ou4wk374et8d"]
 
 [ext_resource type="Script" path="res://sceny/menu.gd" id="1_itech"]
 [ext_resource type="Texture2D" uid="uid://dejefos4a7idx" path="res://grafiki/ilustacja_menu/menuillustration.png" id="2_140ng"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b7q770g4xg3r5" path="res://grafiki/przycisk/przycisk_onpress.png" id="4_cu4fb"]
 [ext_resource type="Texture2D" uid="uid://ds7xoul8oijva" path="res://grafiki/przycisk/przycisk_default.png" id="5_k5qq6"]
 [ext_resource type="PackedScene" uid="uid://ws2n4aogdamx" path="res://autorzy.tscn" id="6_uxgud"]
+[ext_resource type="Texture2D" uid="uid://bi484miryvrm7" path="res://grafiki/ilustacja_menu/pausescape.png" id="7_m84jk"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q86db"]
 texture = ExtResource("4_cu4fb")
@@ -65,3 +66,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_atai7")
 text = "AUTORZY"
 
 [node name="Autorzy" parent="." instance=ExtResource("6_uxgud")]
+
+[node name="Pausescape" type="Sprite2D" parent="."]
+position = Vector2(561, 216)
+scale = Vector2(0.932997, 0.932997)
+texture = ExtResource("7_m84jk")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b5n6c7mnyxfxy"]
+[gd_scene load_steps=16 format=4 uid="uid://b5n6c7mnyxfxy"]
 
 [ext_resource type="Texture2D" uid="uid://dm3bg864yi146" path="res://grafiki/testtile.png" id="1_65tuv"]
 [ext_resource type="PackedScene" uid="uid://boroua2ywk2fw" path="res://objekty/hero/hero.tscn" id="2_qr18n"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bmcehtagf1joq" path="res://sceny/ui.tscn" id="8_bqkut"]
 [ext_resource type="PackedScene" uid="uid://bami0kxgu8mr2" path="res://sceny/pushable.tscn" id="9_if0ji"]
 [ext_resource type="Texture2D" uid="uid://ci5sv6ybjmxjw" path="res://grafiki/walls/walltutorial3_blue.png" id="10_htbfr"]
+[ext_resource type="PackedScene" uid="uid://c7b3qdu5o2ngo" path="res://ramkatut.tscn" id="11_jagt5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3dn0"]
 texture = ExtResource("1_65tuv")
@@ -84,3 +85,21 @@ position = Vector2(1083, 526)
 [node name="Walltutorial3Blue" type="Sprite2D" parent="."]
 texture = ExtResource("10_htbfr")
 centered = false
+
+[node name="RAMKA" parent="." instance=ExtResource("11_jagt5")]
+z_index = 10
+position = Vector2(131, -25)
+metadata/_edit_group_ = true
+
+[node name="Label" parent="RAMKA" index="1"]
+offset_left = 720.0
+offset_top = 381.0
+offset_right = 1172.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 40
+text = "Poza slimakiem w trakcie pauzy grawitacji mozesz lapac przeszkody/rywali. Oznaczeni sa oni na czerwono. Nie mozesz dotknac slimakiem czerwonych obiektow."
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[editable path="RAMKA"]

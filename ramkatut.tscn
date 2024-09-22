@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7b3qdu5o2ngo"]
+
+[ext_resource type="Script" path="res://ramkatut.gd" id="1_kcgox"]
+[ext_resource type="Texture2D" uid="uid://do64oju5x563b" path="res://grafiki/ilustacja_menu/menu.png" id="1_wm4id"]
+
+[node name="RAMKA" type="Node2D"]
+script = ExtResource("1_kcgox")
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(945, 520)
+scale = Vector2(0.506659, 0.378563)
+texture = ExtResource("1_wm4id")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 717.0
+offset_top = 344.0
+offset_right = 1169.0
+offset_bottom = 759.0
+theme_override_font_sizes/font_size = 30
+text = "testsefdsf"
+horizontal_alignment = 3
+
+[node name="TITLE" type="Label" parent="."]
+offset_left = 798.0
+offset_top = 258.0
+offset_right = 1072.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 100
+text = "TUTEK"
+horizontal_alignment = 1
+vertical_alignment = 1

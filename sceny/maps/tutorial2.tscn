@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dalnia30ioyrp"]
+[gd_scene load_steps=15 format=4 uid="uid://dalnia30ioyrp"]
 
 [ext_resource type="Texture2D" uid="uid://dm3bg864yi146" path="res://grafiki/testtile.png" id="1_27mlv"]
 [ext_resource type="PackedScene" uid="uid://boroua2ywk2fw" path="res://objekty/hero/hero.tscn" id="2_pp43e"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dov6a3y6s2s1i" path="res://sceny/meta.tscn" id="7_ah0ky"]
 [ext_resource type="PackedScene" uid="uid://bmcehtagf1joq" path="res://sceny/ui.tscn" id="8_yu0xy"]
 [ext_resource type="Texture2D" uid="uid://pboc57nm2hpl" path="res://grafiki/walls/walltutorial2_red.png" id="9_j7o56"]
+[ext_resource type="PackedScene" uid="uid://c7b3qdu5o2ngo" path="res://ramkatut.tscn" id="10_3g0an"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t3dn0"]
 texture = ExtResource("1_27mlv")
@@ -83,3 +84,19 @@ id_map = 1
 [node name="Walltutorial2Red" type="Sprite2D" parent="."]
 texture = ExtResource("9_j7o56")
 centered = false
+
+[node name="RAMKA" parent="." instance=ExtResource("10_3g0an")]
+position = Vector2(17, -18)
+
+[node name="Label" parent="RAMKA" index="1"]
+offset_left = 720.0
+offset_top = 381.0
+offset_right = 1172.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 40
+text = "Manipuluj slimakiem. Ilosc pauz grawitacji wplywa na rezultat mapy. Im mniej tym lepiej."
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+[editable path="RAMKA"]

@@ -349,7 +349,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_63ehk"]
-radius = 168.962
+radius = 138.438
 
 [node name="Pushable" type="RigidBody2D" groups=["enemy", "gravity"]]
 input_pickable = true
