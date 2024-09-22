@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://desu5nkenpt1d"]
+[gd_scene load_steps=6 format=3 uid="uid://desu5nkenpt1d"]
 
 [ext_resource type="PackedScene" uid="uid://dmqp6qi5xrott" path="res://jsut_kolce.tscn" id="1_arv31"]
+[ext_resource type="Texture2D" uid="uid://c3q81yk8t6bs2" path="res://grafiki/deska/deska.png" id="1_yihrx"]
+[ext_resource type="Texture2D" uid="uid://bdd70av3p81yc" path="res://grafiki/deska/lacznik.png" id="3_cq5vu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jr8w7"]
 
@@ -27,6 +29,7 @@ mass = 0.5
 contact_monitor = true
 
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+visible = false
 offset_left = -270.0
 offset_top = -22.0
 offset_right = 780.0
@@ -35,6 +38,7 @@ mouse_filter = 1
 color = Color(0.366595, 0.366595, 0.366595, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="RigidBody2D"]
+visible = false
 offset_left = 268.0
 offset_top = -527.0
 offset_right = 1318.0
@@ -51,6 +55,33 @@ shape = SubResource("RectangleShape2D_1qd1q")
 position = Vector2(250, -3)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_1qd1q")
+
+[node name="Deska" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-16, 1.52588e-05)
+scale = Vector2(1.4878, 1.4878)
+texture = ExtResource("1_yihrx")
+
+[node name="Deska2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(508, -10)
+scale = Vector2(1.4878, 1.4878)
+texture = ExtResource("1_yihrx")
+
+[node name="Deska3" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(254, -269)
+rotation = 1.57079
+scale = Vector2(1.4878, 1.4878)
+texture = ExtResource("1_yihrx")
+
+[node name="Deska4" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(251, 250)
+rotation = 1.57079
+scale = Vector2(1.4878, 1.4878)
+texture = ExtResource("1_yihrx")
+
+[node name="Lacznik" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(250, -3)
+scale = Vector2(1.46032, 1.46032)
+texture = ExtResource("3_cq5vu")
 
 [node name="jsut kolce" parent="RigidBody2D" instance=ExtResource("1_arv31")]
 position = Vector2(-202, -20)

@@ -349,7 +349,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_63ehk"]
-radius = 138.13
+radius = 168.962
 
 [node name="Pushable" type="RigidBody2D" groups=["enemy", "gravity"]]
 input_pickable = true
@@ -364,11 +364,11 @@ scale = Vector2(2.27344, 2.27344)
 texture = ExtResource("2_5roey")
 
 [node name="Icon" type="AnimatedSprite2D" parent="."]
-position = Vector2(51, -20)
-scale = Vector2(1.07825, 1.07825)
+position = Vector2(57.7274, -11.0788)
+scale = Vector2(1.22534, 1.22534)
 sprite_frames = SubResource("SpriteFrames_gco55")
 autoplay = "default"
-frame_progress = 0.992093
+frame_progress = 0.990521
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7, -26)

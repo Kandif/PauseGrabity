@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dlmb8fw4b1fw7" path="res://muzyczka/Tutorial_z_grawitacją.ogg" id="4_8oqam"]
 [ext_resource type="AudioStream" uid="uid://coiesahuh1wof" path="res://muzyczka/Tutorial_wyłączenie_grawitacji.ogg" id="5_r23tf"]
 
-
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_q0inq"]
 stream_count = 2
 stream_0/stream = ExtResource("3_8ib8f")

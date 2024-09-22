@@ -25,7 +25,7 @@ var maps = [
 	preload("res://sceny/maps/map10.tscn")
 ]
 
-var keys = [KEY_1,KEY_2,KEY_3,KEY_4,KEY_5,KEY_6,KEY_7,KEY_8,KEY_9,KEY_0]
+var keys = [KEY_1,KEY_2,KEY_3,KEY_4,KEY_5,KEY_6,KEY_7,KEY_8,KEY_9,KEY_0,KEY_U,KEY_I,KEY_O,KEY_P]
 
 func _ready() -> void:
 	Player.play("tutorial")
@@ -33,7 +33,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	for input in keys:
 		if Input.is_key_pressed(input):
-			select_map(keys.find(input)+5)
+			select_map(keys.find(input))
 
 func next_map() -> void:
 	actual_map += 1

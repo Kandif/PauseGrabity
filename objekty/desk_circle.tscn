@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbdowmli04w2p"]
+[gd_scene load_steps=6 format=3 uid="uid://dbdowmli04w2p"]
 
 [ext_resource type="PackedScene" uid="uid://dmqp6qi5xrott" path="res://jsut_kolce.tscn" id="1_lhhsr"]
+[ext_resource type="Texture2D" uid="uid://c3q81yk8t6bs2" path="res://grafiki/deska/deska.png" id="2_jrsrq"]
+[ext_resource type="Texture2D" uid="uid://bdd70av3p81yc" path="res://grafiki/deska/lacznik.png" id="3_2bwc0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jr8w7"]
 
@@ -26,7 +28,23 @@ input_pickable = true
 mass = 0.5
 contact_monitor = true
 
+[node name="Deska" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-284.848, 3.5)
+scale = Vector2(1.35366, 1.35366)
+texture = ExtResource("2_jrsrq")
+
+[node name="Deska2" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(273, -4)
+scale = Vector2(1.35366, 1.35366)
+texture = ExtResource("2_jrsrq")
+
+[node name="Lacznik" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(-1.67956, 1.0625)
+scale = Vector2(1.45833, 1.45833)
+texture = ExtResource("3_2bwc0")
+
 [node name="ColorRect" type="ColorRect" parent="RigidBody2D"]
+visible = false
 offset_left = -530.0
 offset_top = -19.0
 offset_right = 520.0
