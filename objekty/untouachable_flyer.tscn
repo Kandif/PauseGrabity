@@ -453,4 +453,4 @@ position = Vector2(9, -2)
 scale = Vector2(0.676762, 0.676762)
 sprite_frames = SubResource("SpriteFrames_tdxrj")
 autoplay = "default"
-frame_progress = 0.398022
+frame_progress = 0.993447

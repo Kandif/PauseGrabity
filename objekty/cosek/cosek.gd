@@ -40,6 +40,12 @@ func restart():
 func _physics_process(delta: float) -> void:
 	if !is_gravity_paused and $circle_timer.value<100:
 		$circle_timer.value += 75 * delta
+		
+	if Input.is_key_pressed(KEY_F1):
+		for object in get_tree().get_nodes_in_group("gravity"):
+			object.visible = false
+		for object in get_tree().get_nodes_in_group("enemy"):
+			object.visible = false	
 	
 	angle += delta * 360
 	if angle>=360:
